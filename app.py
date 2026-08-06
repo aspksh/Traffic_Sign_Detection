@@ -1,5 +1,6 @@
 import streamlit as st
 import torch
+from torchivision as nn
 from torchvision import transforms
 from PIL import Image
 from model import TrafficSignCNN
