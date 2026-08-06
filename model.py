@@ -35,10 +35,10 @@ class TrafficSignCNN(nn.module):
             nn.Dropout(0.5)
             )
 
-       self.fc = Sequential(
+        self.fc = Sequential(
             nn.Flatten(),
             nn.Linear(4 * 4 * 128, 512),
-            nn.BatchNorm2d(512),
+            nn.BatchNorm1d(512),
             nn.ReLU(inplace = True),
             nn.Dropout(0.5),
             nn.Linear(512, 43)
