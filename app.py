@@ -11,7 +11,7 @@ st.title("Traffic Sign Detection")
 
 device = torch.device("cuda" if torch.cuda_is_available() else "cpu")
 
-model = TrafficSignCNN()
+model = TrafficSignCNN().to(device)
 
 model.load_state_dict(torch.load("traffic_sign_detection.pth",map_location = device))
 
