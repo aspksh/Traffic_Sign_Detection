@@ -4,7 +4,7 @@ class TrafficSignCNN(nn.Module):
     def __init__(self):
         super(TrafficSignCNN, self).__init__()
 
-        self.block1 = Sequential(
+        self.block1 = nn.Sequential(
             nn.Conv2d(3, 32, kernel_size = 3, padding = 1),
             nn.BatchNorm2d(32),
             nn.ReLU(inplace = True),
@@ -15,7 +15,7 @@ class TrafficSignCNN(nn.Module):
             nn.Dropout(0.5)
             )
 
-        self.block2 = Sequential(
+        self.block2 = nn.Sequential(
             nn.Conv2d(3, 64, kernel_size = 3, padding = 1),
             nn.BatchNormd2d(64),
             nn.ReLU(inplace = True),
@@ -26,7 +26,7 @@ class TrafficSignCNN(nn.Module):
             nn.Dropout(0.5)
             )
 
-        self.block3 = Sequential(
+        self.block3 = nn.Sequential(
             nn.Conv2d(3, 128, kernel_size = 3, padding = 1),
             nn.BatchNormd2d(128),
             nn.ReLU(inplace = True),
@@ -37,7 +37,7 @@ class TrafficSignCNN(nn.Module):
             nn.Dropout(0.5)
             )
 
-        self.fc = Sequential(
+        self.fc = nn.Sequential(
             nn.Flatten(),
             nn.Linear(4 * 4 * 128, 512),
             nn.BatchNorm1d(512),
