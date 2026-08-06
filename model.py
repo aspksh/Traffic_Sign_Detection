@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-class TrafficSignCNN(nn.module):
+class TrafficSignCNN(nn.Module):
     def __init__(self):
         super(TrafficSignCNN, self).__init__()
 
