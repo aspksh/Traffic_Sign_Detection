@@ -9,7 +9,7 @@ st.set_page_config(page_title = "Traffic Sign Detection")
 
 st.title("Traffic Sign Detection")
 
-device = torch.device("cuda" if torch.cuda_is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = TrafficSignCNN().to(device)
 
