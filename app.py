@@ -1,6 +1,6 @@
 import streamlit as st
 import torch
-from torchvision import transform
+from torchvision import transforms
 from PIL import Image
 from model import TrafficSignCNN
 from streamlit_cropper import st_cropper
