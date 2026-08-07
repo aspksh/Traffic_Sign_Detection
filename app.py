@@ -64,7 +64,8 @@ if image is not None:
     box_color = "#00FF00",
     aspect_ratio=(1,1)
   )
-  st.image(cropped, caption = "Cropped Sign")
+  if cropped is not None:
+      st.image(cropped, caption = "Cropped Sign", use_column_width=True)
   if cropped.mode != 'RGB':
         cropped = cropped.convert('RGB')
 
