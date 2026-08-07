@@ -18,7 +18,7 @@ model.load_state_dict(torch.load("traffic_sign_detection.pth",map_location = dev
 model.eval()
 
 transform = transforms.Compose([
-  transforms.Resize(32,32),
+  transforms.Resize((32,32)),
   transforms.ToTensor(),
   transforms.Normalize((0.5), (0.5))
 ])
