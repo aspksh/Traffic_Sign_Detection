@@ -64,7 +64,7 @@ if image is not None:
   )
   st.image(cropped, caption = "Cropped Sign")
 
-  img = transform(cropped, caption = "Cropped Sign")
+  img = transform(cropped).unsqueeze(0)
 
   with torch.no_grad():
 
