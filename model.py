@@ -33,7 +33,7 @@ class TrafficSignCNN(nn.Module):
             nn.Conv2d(128, 128, kernel_size = 3, padding = 1),
             nn.BatchNorm2d(128),
             nn.ReLU(inplace = True),
-            nn.MaxPool(kernel_size = 2, stride = 2),
+            nn.MaxPool2d(kernel_size = 2, stride = 2),
             nn.Dropout(0.5)
             )
 
