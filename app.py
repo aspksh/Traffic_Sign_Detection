@@ -20,7 +20,7 @@ model.eval()
 transform = transforms.Compose([
   transforms.Resize((32,32)),
   transforms.ToTensor(),
-  transforms.Normalize((0.5), (0.5))
+  
 ])
 
 CLASS_NAMES = [
@@ -55,7 +55,9 @@ elif camera_image is not None:
 
 if image is not None:
   st.subheader("crop sign")
-
+  if cropped.mode != 'RGB':
+        cropped = cropped.convert('RGB')
+    
   cropped = st_cropper(
     image,
     realtime_update = True,
@@ -63,6 +65,8 @@ if image is not None:
     aspect_ratio=(1,1)
   )
   st.image(cropped, caption = "Cropped Sign")
+  if cropped.mode != 'RGB':
+        cropped = cropped.convert('RGB')
 
   img = transform(cropped).unsqueeze(0)
 
