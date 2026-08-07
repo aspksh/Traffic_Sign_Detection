@@ -82,4 +82,4 @@ if image is not None:
   class_name = CLASS_NAMES[pred.item()]
 
   st.success(f"Prediction: {class_name}")
-  st.write(f"Confidence:{confidence:.2f}%")
+  st.write(f"Confidence:{conf * 100:.2f}%")
