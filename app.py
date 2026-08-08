@@ -49,9 +49,9 @@ camera_image = st.camera_input("Capture Sign")
 image = None
 
 if uploaded is not None:
-  image = Image.open(uploaded)
+  image = Image.open(uploaded).convert(RGB)
 elif camera_image is not None:
-  image = Image.open(camera_image)
+  image = Image.open(camera_image).convert(RGB)
 
 if image is not None:
   img_tensor = transform(image).unsqueeze(0).to(device)  
