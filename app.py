@@ -54,12 +54,12 @@ elif camera_image is not None:
   image = Image.open(camera_image)
 
 if image.mode != 'RGB':
-    image = image.convert('RGB')
+  image = image.convert('RGB')
 
   
 
   with torch.no_grad():
-
+    
     output = model(img_tensor)
     probs = torch.softmax(output, 1)
     confidence, pred = torch.max(probs,1)
