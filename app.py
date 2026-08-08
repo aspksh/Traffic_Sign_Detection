@@ -49,9 +49,9 @@ camera_image = st.camera_input("Capture Sign")
 image = None
 
 if uploaded is not None:
-  image = Image.open(uploaded).convert(RGB)
+  image = Image.open(uploaded).convert("RGB")
 elif camera_image is not None:
-  image = Image.open(camera_image).convert(RGB)
+  image = Image.open(camera_image).convert("RGB")
 
 if image is not None:
   st.image(image, caption="Input Sign")
