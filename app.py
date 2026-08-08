@@ -53,8 +53,7 @@ if uploaded is not None:
 elif camera_image is not None:
   image = Image.open(camera_image)
 
-if image.mode != 'RGB':
-  image = image.convert('RGB')
+
 
   
 
