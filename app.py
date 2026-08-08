@@ -53,24 +53,10 @@ if uploaded is not None:
 elif camera_image is not None:
   image = Image.open(camera_image)
 
-cropped = None
-if image is not None:
-  st.subheader("crop sign")
-  if image.mode != 'RGB':
-        image = image.convert('RGB')
-    
-  cropped = st_cropper(
-    image,
-    realtime_update = True,
-    box_color = "#00FF00",
-    aspect_ratio=(1,1)
-  )
-  if cropped is not None:
-      st.image(cropped, caption = "Cropped Sign")
-      if cropped.mode != 'RGB':
-        cropped = cropped.convert('RGB')
+if image.mode != 'RGB':
+    image = image.convert('RGB')
 
-  img_tensor = transform(cropped).unsqueeze(0).to(device)
+  
 
   with torch.no_grad():
 
