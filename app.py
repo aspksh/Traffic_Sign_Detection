@@ -53,9 +53,7 @@ if uploaded is not None:
 elif camera_image is not None:
   image = Image.open(camera_image)
 
-
-
-  
+  img_tensor = transform(image).unsqueeze(0).to(device)  
 
   with torch.no_grad():
     
